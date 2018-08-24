@@ -30,20 +30,26 @@ int minDistance(char grid[N][M]){
     int ptr1 = ptr.first;
     int ptr2 = ptr.second;
     
+
+    //check if thereis an element on top, ie it's not on the top row
     if(ptr1-1>=0 && (table[ptr1-1][ptr2]> table[ptr1][ptr2] +1)){
         table[ptr1-1][ptr2] = 1;
         q.push(pair<int,int>(ptr1-1, ptr2));
     }
+
+    //check if it is not on the bottom row
     if(ptr1+1<N && (table[ptr1+1][ptr2]> table[ptr1][ptr2] +1)){
         table[ptr1+1][ptr2] = 1;
         q.push(pair<int,int>(ptr1+1, ptr2));
     }
-        
+
+    //check if it's not in the left-most row    
     if(ptr2-1>=0 && (table[ptr1][ptr2-1]> table[ptr1][ptr2] +1)){
         table[ptr1][ptr2-1] = 1;
         q.push(pair<int,int>(ptr1, ptr2-1));
     }
     
+    //check if it's not in the left-most row
     if(ptr2+1<M && (table[ptr1][ptr2+1]> table[ptr1][ptr2] +1)){
         table[ptr1][ptr2+1] = 1;
         q.push(pair<int,int>(ptr1, ptr2+1));
@@ -85,7 +91,7 @@ int minDistance(char grid[N][M]){
 }
 int main() {
     
-	char grid[N][M] = { { '0', '*', '0', 's' },
+    char grid[N][M] = { { '0', '*', '0', 's' },
                         { '*', '0', '*', '*' },
                         { '0', '*', '*', '*' },
                         { 'd', '*', '*', '*' } };
@@ -98,5 +104,5 @@ int main() {
     }*/
  
     cout << minDistance(grid);
-	return 0;
+    return 0;
 }
