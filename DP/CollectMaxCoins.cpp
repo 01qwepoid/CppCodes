@@ -1,4 +1,4 @@
-//Collect max coins moving down, rights
+//Collect max coins moving down, right
 
 /*
 [[0,0,0,0,1,0],
