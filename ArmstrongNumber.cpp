@@ -19,3 +19,4 @@ int main() {
 	(sum==n)?cout<<1<<endl:cout<<0<<endl;
 	return 0;
 }
+	
